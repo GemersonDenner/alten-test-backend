@@ -48,3 +48,41 @@ and can’t be reserved more than 30 days in advance.
 	
 - To simplify the API is insecure.
 	- Dont use SSL/ cript data
+	
+	
+	
+	
+#YugabyteDB Steps#
+
+ docker pull yugabytedb/yugabyte:2.17.0.0-b24
+ 
+ docker run -d --name yugabyte  -p7000:7000 -p9000:9000 -p5433:5433 -p9042:9042\
+ yugabytedb/yugabyte:2.15.2.0-b87 bin/yugabyted start\
+ --daemon=false
+ 
+ 
+  #terminal - Docker Desktop#
+ ysqlsh
+ 
+ CREATE DATABASE ysql_booking;
+ 
+ CREATE DATABASE ysql_identity;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#explaining my idea#
+- Use two cloud providers (eg: AWS and Azure);
+- Use Kubernetes, with this, you can use green/blue deployment (risk free updates);
+- Use Kubernetes in both cloud providers;
+- Use YugabyteDB in both cloud providers;
+- Create a VPC between the clouds;
+- Create rules of DNS, if one service stay off, you can use the other cloud.
+
+
