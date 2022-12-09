@@ -22,10 +22,20 @@ namespace Booking.Application.CustomServices
 
 		public async Task<Book> CreateBookAsync(string userEmail, DateTime startDate, DateTime endDate)
 		{
+			if (endDate > startDate)
+			{
+				throw new BusinessException("Invalid Dates");
+			}
+
 			var checkExistBookBetweenDate = await this.GetBookAsync(startDate, endDate);
 			if(checkExistBookBetweenDate != null)
 			{
 				throw new BusinessException("Already exist an Booking between this dates");
+			}
+
+			if ((endDate - startDate).Days > 3)
+			{
+				throw new BusinessException("Sorry, you only can schedule less then 4 days.");
 			}
 			
 			var newBook = new Book(userEmail, startDate, endDate);
