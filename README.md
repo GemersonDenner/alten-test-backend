@@ -84,5 +84,7 @@ and can’t be reserved more than 30 days in advance.
 - Use YugabyteDB in both cloud providers;
 - Create a VPC between the clouds;
 - Create rules of DNS, if one service stay off, you can use the other cloud.
+- If the Database Service in one cloud stay offline, the API can use the other Database;
+- If the Kubernetes Service is offline, the User will use the other Api in the other Cloud;
 
 ![Alt text](/My_ideas.png)
