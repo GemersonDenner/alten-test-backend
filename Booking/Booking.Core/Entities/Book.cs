@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Booking.Core.Entities
 {
-	public class Book :BaseEntity
+	public class Book:BaseEntity
 	{
 		public DateTime BookDate { get; set; } = DateTime.Now;
 		public DateTime StartDate { get; set; }

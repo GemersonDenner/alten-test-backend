@@ -12,10 +12,10 @@ namespace Booking.Infrastructure.Data
 {
 	public class UnitOfWork : IUnitOfWork
 	{
-		private readonly StoreContext _storeContext;
+		private readonly BookingContext _storeContext;
 		private Hashtable _repositories;
 
-		public UnitOfWork(StoreContext storeContext)
+		public UnitOfWork(BookingContext storeContext)
 		{
 			_storeContext = storeContext;
 		}

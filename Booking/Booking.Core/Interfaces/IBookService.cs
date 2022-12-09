@@ -12,6 +12,8 @@ namespace Booking.Core.Interfaces
 		Task<IReadOnlyList<Book>> GetBookAsync();
 		Task<IReadOnlyList<Book>> GetBookAsync(DateTime startDate, DateTime endDate);
 		Task<IReadOnlyList<Book>> GetBookAsync(string emailUser);
-		Task<Room> CreateBookAsync(string userEmail, DateTime startDate, DateTime endDaten);
+		Task<Book> CreateBookAsync(string userEmail, DateTime startDate, DateTime endDate);
+		Task<bool> DeleteBookAsync(string userEmail, int idBook);
+		Task<Book> UpdateBookAsync(string userEmail, int idBook, DateTime startDate, DateTime endDate);
 	}
 }
