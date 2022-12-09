@@ -85,4 +85,4 @@ and can’t be reserved more than 30 days in advance.
 - Create a VPC between the clouds;
 - Create rules of DNS, if one service stay off, you can use the other cloud.
 
-
+![Alt text](/My_ideas.png)
